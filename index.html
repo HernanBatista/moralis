@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> Auth TEST</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://npmcdn.com/moralis@0.0.6/dist/moralis.js"></script>
+    </head>
+
+    <body>
+        
+        <button onclick="login()"> Login Metamask </button>
+        <script>
+            Moralis.initialize("eOWnqpxxKVVTHJr3TxDYO2PBKzWy5KeZG22oSFWr");
+            Moralis.sererURL = "https://ikuw2wo1rjwq.usemoralis.com:2053/server";
+
+            async function login(){
+                console.log("login clicked");
+                var user = await Moralis.Web3.authenticate();
+                if(user){
+                    console.log(user);
+                }
+            } 
+        </script>
+
+    </body>
+</html>
